@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 def main():
 
-    PATH = "SEND_FILE_PATH"
+    PATH = "./whatday"
     ACCESS_TOKEN = "YOUR_ACCESS_LINE_TOKEN"
     REQUEST_URL = "https://notify-api.line.me/api/notify"
 
