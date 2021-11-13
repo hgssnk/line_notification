@@ -5,12 +5,18 @@ import requests
 from bs4 import BeautifulSoup
 
 def main():
+
     PATH = "SEND_FILE_PATH"
-    ACCESS_TOKEN = "YOUR_LINE_ACCESS_TOKEN"
+    ACCESS_TOKEN = "YOUR_ACCESS_LINE_TOKEN"
     REQUEST_URL = "https://notify-api.line.me/api/notify"
 
-    texts = file_reader(PATH)
-    line_notification(REQUEST_URL, ACCESS_TOKEN, texts)
+    try:
+        texts = file_reader(PATH)
+        line_notification(REQUEST_URL, ACCESS_TOKEN, texts)
+    except Execption as e:
+        print(e)
+    finally:
+        print('finished main')
     return 0
 
 def file_reader(PATH):
@@ -29,7 +35,6 @@ def line_notification(request, token, texts):
         headers=headers,
         data=data,
     )
-
 
 if __name__ == '__main__':
     sys.exit(main())
