@@ -4,12 +4,11 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
+PATH = "./whatday"
+ACCESS_TOKEN = "YOUR_ACCESS_LINE_TOKEN"
+REQUEST_URL = "https://notify-api.line.me/api/notify"
+
 def main():
-
-    PATH = "./whatday"
-    ACCESS_TOKEN = "YOUR_ACCESS_LINE_TOKEN"
-    REQUEST_URL = "https://notify-api.line.me/api/notify"
-
     try:
         texts = file_reader(PATH)
         line_notification(REQUEST_URL, ACCESS_TOKEN, texts)
